@@ -1,0 +1,466 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Merge" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1306,644" sap2010:WorkflowViewState.IdRef="Merge_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="30">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Merge" sap:VirtualizedContainerService.HintSize="349,397" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtDeut" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="307,51" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="Deutsche Trade Bookout.xlsm">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dtDeut]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ExcelApplicationScope>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtDeut]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="307,214" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Merge" sap:VirtualizedContainerService.HintSize="755,3711" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="blnExist" />
+              <Variable x:TypeArguments="x:Boolean" Name="blnPlsWaitExist" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" Text="69253">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="480eb7a2-fdd3-4841-ae9a-83539aaf294d" InformativeScreenshot="0bd27013c4554827b0a955206907d2f2" Selector="&lt;html app='chrome.exe' title='Trade Amendment list - GBO SG' /&gt;&lt;webctrl idx='1' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[row(&quot;Security Short Code&quot;).ToString]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af3e3e70-0836-46c7-819b-6e34f3851d5f" InformativeScreenshot="a8db42c7c8e01092d175e657d24353ed" Selector="&lt;html app='chrome.exe' title='Trade Amendment list - GBO SG' /&gt;&lt;webctrl idx='3' tag='INPUT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="[row(&quot;Buy Sale Indicator&quot;).ToString]">
+              <ui:SelectItem.Items>
+                <scg:List x:TypeArguments="x:String" Capacity="4">
+                  <x:String>ALL</x:String>
+                  <x:String>TrBuy</x:String>
+                  <x:String>TrSell</x:String>
+                </scg:List>
+              </ui:SelectItem.Items>
+              <ui:SelectItem.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="5259bed5-7c9b-47a6-9064-f77da7bc8e0d" InformativeScreenshot="6f45047ba331afed948f569f0243e7ff" Selector="&lt;html app='chrome.exe' title='Trade Amendment list - GBO SG' /&gt;&lt;webctrl idx='3' tag='SELECT' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SelectItem.Target>
+            </ui:SelectItem>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2d767313-10bd-4b36-b6d0-cf006a63a736" InformativeScreenshot="9eb8130d2ebdf4b66ddfda0eb2549394" Selector="&lt;html app='chrome.exe' title='Trade Amendment list - GBO SG' /&gt;&lt;webctrl idx='1' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'A '" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d3b6924d-bcc7-4449-bdf8-f07ba49891a3" InformativeScreenshot="4b3a7e88973fa1538c84be4dec0c67af" Selector="&lt;html app='chrome.exe' title='Trade Amendment list - GBO SG' /&gt;&lt;webctrl aaname='4*' tag='A' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'BUTTON'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" WaitActive="True">
+              <ui:WaitUiElementAppear.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4f3fd8a0-6e37-42bd-a572-865080f92dc2" InformativeScreenshot="2e05ee6403ba74783925d5d54fd471fd" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;&lt;webctrl aaname=' Merge Trade' tag='BUTTON' type='button' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:WaitUiElementAppear.Target>
+            </ui:WaitUiElementAppear>
+            <ui:WaitUiElementVanish WaitNotActive="{x:Null}" DisplayName="Wait &quot;Pls Wait&quot;Vanish" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="WaitUiElementVanish_4" WaitNotVisible="True">
+              <ui:WaitUiElementVanish.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c65f3435-75b7-4ad0-94e4-c518d3ae7def" InformativeScreenshot="fff200f7b533e822d491b2cc3e74b33e" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;&lt;webctrl aaname='Please Wait...' tag='DIV' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:WaitUiElementVanish.Target>
+            </ui:WaitUiElementVanish>
+            <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="ImageFound_7">
+              <ui:ImageFound.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+              </ui:ImageFound.Image>
+              <ui:ImageFound.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:ImageFound.Target>
+            </ui:ImageFound>
+            <ui:InterruptibleWhile Condition="[blnPlsWaitExist = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="713,363" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_4">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_8">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                  </ui:ImageFound>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1b251a89-b88d-43ab-9422-dff236c147ca" InformativeScreenshot="e59ce19313f37f383fc7a19554116c52" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;&lt;webctrl aaname=' Merge Trade' tag='BUTTON' type='button' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="ImageFound_9">
+              <ui:ImageFound.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+              </ui:ImageFound.Image>
+              <ui:ImageFound.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:ImageFound.Target>
+            </ui:ImageFound>
+            <ui:InterruptibleWhile Condition="[blnPlsWaitExist = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="713,363" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_10">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                  </ui:ImageFound>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0417bbef-411f-4a8b-a3ba-6827af1137e4" InformativeScreenshot="f3ca790a213bbad233f03ac8e5fd31b5" Selector="&lt;html app='chrome.exe' title='Merge Trade - GBO SG' /&gt;&lt;webctrl aaname='Merge All' tag='BUTTON' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="ImageFound_11">
+              <ui:ImageFound.Image>
+                <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+              </ui:ImageFound.Image>
+              <ui:ImageFound.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:ImageFound.Target>
+            </ui:ImageFound>
+            <ui:InterruptibleWhile Condition="[blnPlsWaitExist = True]" DisplayName="While" sap:VirtualizedContainerService.HintSize="713,363" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_6">
+              <ui:InterruptibleWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ImageFound DisplayName="Image Exists 'chrome.exe Edit'" Found="[blnPlsWaitExist]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ImageFound_12">
+                    <ui:ImageFound.Image>
+                      <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" Profile="Basic" TargetImageBase64="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" />
+                    </ui:ImageFound.Image>
+                    <ui:ImageFound.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="43444c94-8bf0-4884-b88a-93c112adcc20" Selector="&lt;html app='chrome.exe' title='Edit Trade Amendment - GBO SG' /&gt;" TimeoutMS="500">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:ImageFound.Target>
+                  </ui:ImageFound>
+                </Sequence>
+              </ui:InterruptibleWhile.Body>
+            </ui:InterruptibleWhile>
+            <ui:TextExists FormattedText="{x:Null}" DisplayName="Text Exists 'P'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TextExists_2" Occurrence="1" Result="[blnExist]" Text="There should be at least two trade to merge.">
+              <ui:TextExists.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="73d4e893-e31b-4c30-975b-97c6585f2ca9" InformativeScreenshot="4d3205b4527b46e78420a3cf34dc9be0" Selector="&lt;html app='chrome.exe' title='Merge Trade - GBO SG' /&gt;&lt;webctrl tag='P' /&gt;" TimeoutMS="500">
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TextExists.Target>
+            </ui:TextExists>
+            <If Condition="[blnExist = True]" sap:VirtualizedContainerService.HintSize="713,254" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Then>
+                <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_12" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e8c77d16-d731-46c4-a58e-eead402406f0" InformativeScreenshot="30dd57c608077d52d01dba0b012e2bd6" Selector="&lt;html app='chrome.exe' title='Merge Trade - GBO SG' /&gt;&lt;webctrl aaname='                  OK     ' tag='BUTTON' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+              </If.Then>
+              <If.Else>
+                <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6d95b2bc-27f1-49f0-98f0-fa4c80ac2bd8" InformativeScreenshot="9fbb1543d96c023b4e596bf8f2d7ef6b" Selector="&lt;html app='chrome.exe' title='Merge Trade - GBO SG' /&gt;&lt;webctrl aaname='                  OK     ' tag='BUTTON' /&gt;">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                      <ui:Target.WaitForReady>
+                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                      </ui:Target.WaitForReady>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+              </If.Else>
+            </If>
+            <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="500" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="713,106" sap2010:WorkflowViewState.IdRef="Click_14" KeyModifiers="None" MouseButton="BTN_LEFT">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1cf99e48-5fe3-4313-bfb4-ad3ba3ea71c9" InformativeScreenshot="bac8710657094744895a2534efd0b661" Selector="&lt;html app='chrome.exe' title='Merge Trade - GBO SG' /&gt;&lt;webctrl aaname='Trade' tag='SPAN' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+  </Sequence>
+</Activity>
